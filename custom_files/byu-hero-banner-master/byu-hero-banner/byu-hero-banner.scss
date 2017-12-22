@@ -1,0 +1,463 @@
+/*!
+ *  @license
+ *    Copyright 2017 Brigham Young University
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License. 
+ */
+
+@import 'byu-hero-banner-common';
+
+:host {
+    width: 100%;
+    max-height: $desktopHeight;
+    height: $desktopHeight;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+
+.image-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+#hidden-image {
+    display: none;
+}
+
+.text-wrapper {
+    ::slotted(*) {
+        font-family: $bodyFont;
+    }
+
+    .headline ::slotted(*) {
+        font-family: $headlineFont !important;
+    }
+}
+
+.read-more-link  {
+
+    display: inline-block;
+
+    ::slotted(a), ::slotted(.btn) {
+        margin-bottom: 0;
+        font-weight: bold !important;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        border-radius: 1px;
+        user-select: none;
+        text-decoration: none !important;
+        min-width: 200px;
+        min-height: 40px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+:host(.video-hero) {
+
+    .image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 200;
+    }
+
+    // Show the image initially
+    #hidden-image {
+        display: inline;
+        position: absolute;
+        z-index: 250;
+    }
+    // For fading out the image after video video starts playing
+    .hidden {
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .tv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: #000;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+
+        .overlay {
+            position: absolute;
+            z-index: 400;
+            width: 100%;
+            height: 100%;
+            background-image: url('~/byu-hero-banner/dark.png');
+            background-repeat: repeat;
+            background-size: auto;
+        }
+    
+        .screen {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            // width: 100%;
+            /* this always centers the video */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 150;
+
+            margin: auto;
+
+            opacity: 1;
+            transition: opacity .5s;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+:host(.full-screen) {
+
+    .image-wrapper {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+:host(.full-screen, .video-hero) {
+    
+    .text-wrapper {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+        // padding: 0 20px;
+        z-index: 300;
+        
+        .text-inner-wrapper {
+            // background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            color: $white;
+        }
+
+        .headline {
+            //color: $navy;
+            font-size: $headlineSizeFullScreen;
+            line-height: $headlineLineHeightFullScreen;
+        }
+
+        .intro-text {
+            margin-top: 15px;
+            font-size: $introTextFontSizeFullScreen;
+        }
+
+        .read-more-link {
+            margin: 0 auto;
+            margin-top: 50px;
+
+            ::slotted(a), ::slotted(.btn) {
+                background-color: $navy !important;
+                color: #fff !important;
+            }
+
+            ::slotted(a:hover), ::slotted(.btn:hover) {
+                background-color: #00152a !important;
+                border-color: #000306 !important;
+            }
+        }
+    }
+}
+
+:host(.full-screen.dark-image) {
+
+    .text-wrapper {
+        
+        .text-inner-wrapper {
+            background: inherit;
+        }
+
+        .headline, .intro-text, .read-more-link {
+            color: #fff;
+        }
+
+        .read-more-link {
+            
+            ::slotted(a), ::slotted(.btn) {
+                background-color: #fff !important;
+                color: $navy !important;
+                border-color: $mediumGray !important;
+            }
+        }
+    }
+}
+
+:host(.side-image) {
+
+    background-color: initial;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    height: initial;
+    align-items: center;
+    justify-content: center;
+
+    .image-wrapper {
+        height: 414px;
+        width: 100%;
+        
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .text-wrapper {
+        
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        box-sizing: border-box;
+        margin-left: 50px;
+
+        .headline {
+            color: $navy;
+            font-size: $headlineSizeSideImage;
+            line-height: $headlineLineHeightSideImage;
+        }
+
+        .intro-text {
+            margin-top: 15px;
+            font-size: $introTextFontSizeSideImage;
+            line-height: $introTextLineHeightSideImage;
+        }
+
+        .read-more-link {
+            margin-top: 20px;
+
+            ::slotted(a), ::slotted(.btn) {
+                background-color: $navy !important;
+                color: #fff !important;
+            }
+
+            ::slotted(a:hover), ::slotted(.btn:hover) {
+                background-color: #00152a !important;
+                border-color: #000306 !important;
+            }
+        }
+    }
+}
+
+:host(.transparent-overlay) {
+   
+    .image-wrapper {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .text-wrapper {
+
+        height: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: -$desktopHeight;
+        padding: 0 16px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        .text-inner-wrapper {
+            width: 400px;
+            height: 80%;
+            margin-top: $desktopHeight/10;
+            background-color: rgba(255,255,255,0.8);
+            
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        
+        .headline {
+            color: $navy;
+            font-size: $headlineSizeOverlay;
+            line-height: $headlineLineHeightOverlay;
+        }
+
+        .intro-text {
+            margin-top: 15px;
+            font-size: $introTextFontSizeOverlay;
+            line-height: $introTextLineHeightOverlay;
+        }
+
+        .read-more-link {
+            margin-top: 20px;
+            align-self: center;
+
+            ::slotted(a), ::slotted(.btn) {
+                background-color: $navy !important;
+                color: #fff !important;
+            }
+
+            ::slotted(a:hover), ::slotted(.btn:hover) {
+                background-color: #00152a !important;
+                border-color: #000306 !important;
+            }
+        }
+    }
+}
+
+/* Allow Right Aligning the transparent overlay */
+:host(.transparent-overlay.right) {
+    .text-wrapper {
+        justify-content: flex-end;
+    }
+}    
+/* Tablet Width */
+@media (max-width: 1024px) {
+
+    :host(.full-screen) {
+        height: $mobileHeight;
+        
+        .text-wrapper {
+            
+            .text-inner-wrapper {
+
+                .headline {
+                    font-size: $headlineSizeFullScreenMobile;
+                    line-height: $headlineLineHeightFullScreenMobile;
+                }
+
+                .intro-text {
+                    font-size: $introTextFontSizeFullScreenMobile;
+                }
+
+            }
+        }
+    }
+
+    :host(.side-image) {
+
+        .image-wrapper {
+            height: 216px;
+        }
+
+        .text-wrapper {
+
+            .text-inner-wrapper {
+
+                .headline {
+                    font-size: $headlineSizeSideImageMobile;
+                    line-height: $headlineLineHeightSideImageMobile;
+                }
+
+                .intro-text {
+                    font-size: $introTextFontSizeSideImageMobile;
+                    line-height: $introTextLineHeightSideImageMobile;
+                }
+            }
+        }
+    }
+
+    :host(.transparent-overlay) {
+
+        height: $mobileHeight;
+        
+        .text-wrapper {
+
+            height: auto;
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            .text-inner-wrapper {
+                width: 100%;
+                height: 100%;
+                
+                padding: 30px 30px;
+
+                .headline {
+                    font-size: $headlineSizeOverlayMobile;
+                    line-height: $headlineLineHeightOverlayMobile;
+                }
+
+                 .intro-text {
+                    font-size: $introTextFontSizeOverlayMobile;
+                    line-height: $introTextLineHeightOverlayMobile;
+                }
+            }
+        }
+    }
+}
+
+/* Phone Width */
+@media (max-width: 616px) {
+
+    :host(.side-image) {
+
+        height: auto;
+        max-height: initial;
+        padding: 0;
+        display: block;
+
+        .image-wrapper {
+            background: none !important;
+            height: auto;
+
+            #hidden-image {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .text-wrapper {
+            margin-top: 20px;
+            margin-left: 0px;
+            height: auto;
+            padding: 0 20px;
+            
+            .read-more-link {
+                margin-top: 20px;
+            }
+        }        
+    }
+}

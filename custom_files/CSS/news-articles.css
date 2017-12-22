@@ -1,0 +1,61 @@
+/*Go to structure, and edit the name of the custom css field in fields*/
+
+#block-views-block-news-view-block-1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#block-views-block-news-view-block-1 h2 {
+    margin: 0px 0px 8px 0px;
+}
+
+.contextual-region {
+    text-align: left;
+    font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+}
+
+.news-rows {
+    padding-top: 30px;
+}
+
+.container-fluid p {
+    font-size: 1.15em;
+    text-align: left;
+}
+
+.container-fluid img {
+    width: 90%;
+    height: 90%;
+    margin-top: 1%;
+}
+
+.news-title {
+    text-align: left;
+    font-size: 23px;
+    font-weight: 100;
+}
+
+article {
+    padding-bottom: 32px;
+}
+
+.read-more-btn {
+    padding: 10px 40px;
+    margin-top: 20px;
+    background-color: rgb(35, 70, 105);
+    color: white;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.read-more-btn:hover {
+    background-color: rgb(46, 94, 142);
+    text-decoration: none;
+    color: #efefef;
+}
+
+.read-more-btn-div {
+    text-align: left;
+}
