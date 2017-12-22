@@ -1,0 +1,38 @@
+<script src="//cdn.byu.edu/byu-calendar-tile/latest/byu-calendar-tile.min.js"></script>
+<script src="//cdn.byu.edu/byu-calendar-row/latest/byu-calendar-row.min.js"></script>
+<link rel="stylesheet" href="modules/byu-calendar-components/dist/byu-calendar.min.css">
+<script defer src="modules/byu-calendar-components/dist/byu-calendar.min.js"></script>
+<link type="text/css" rel="stylesheet" href="//cloud.typography.com/75214/6517752/css/fonts.css" media="all" />
+<link rel="stylesheet" href="https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.css" />
+<script async src="https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    html {
+        height: 100%;
+    }
+
+    .datcal {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .page-content {
+        flex: 1;
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+</style>
+
+<div class="datcal">
+    <div class="page-content">
+        <byu-calendar title="BYU Calendar" categories="3+4+5" days="7" price="4.5" display="2" limit="4">
+        </byu-calendar>
+    </div>
+</div>
