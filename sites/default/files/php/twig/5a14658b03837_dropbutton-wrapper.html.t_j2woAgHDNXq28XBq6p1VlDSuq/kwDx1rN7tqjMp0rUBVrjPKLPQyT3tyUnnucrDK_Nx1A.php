@@ -1,7 +1,7 @@
 <?php
 
-/* core/themes/stable/templates/misc/feed-icon.html.twig */
-class __TwigTemplate_f382d838aa0945099efb3470ad152d24f878eb546a99fd6e91ce4fed85796fdd extends Twig_Template
+/* core/themes/classy/templates/form/dropbutton-wrapper.html.twig */
+class __TwigTemplate_fcee0e00aa088841204125ffd2cc9667515fa16923000387ee805056191438bc extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -15,14 +15,14 @@ class __TwigTemplate_f382d838aa0945099efb3470ad152d24f878eb546a99fd6e91ce4fed857
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $tags = array();
-        $filters = array("t" => 14);
+        $tags = array("if" => 12, "spaceless" => 13);
+        $filters = array();
         $functions = array();
 
         try {
             $this->env->getExtension('Twig_Extension_Sandbox')->checkSecurity(
+                array('if', 'spaceless'),
                 array(),
-                array('t'),
                 array()
             );
         } catch (Twig_Sandbox_SecurityError $e) {
@@ -39,23 +39,28 @@ class __TwigTemplate_f382d838aa0945099efb3470ad152d24f878eb546a99fd6e91ce4fed857
             throw $e;
         }
 
-        // line 13
-        echo "<a href=\"";
-        echo $this->env->getExtension('Twig_Extension_Sandbox')->ensureToStringAllowed($this->env->getExtension('Drupal\Core\Template\TwigExtension')->escapeFilter($this->env, ($context["url"] ?? null), "html", null, true));
-        echo "\"";
-        echo $this->env->getExtension('Twig_Extension_Sandbox')->ensureToStringAllowed($this->env->getExtension('Drupal\Core\Template\TwigExtension')->escapeFilter($this->env, $this->getAttribute(($context["attributes"] ?? null), "addClass", array(0 => "feed-icon"), "method"), "html", null, true));
-        echo ">
+        // line 12
+        if (($context["children"] ?? null)) {
+            // line 13
+            echo "  ";
+            ob_start();
+            // line 14
+            echo "    <div class=\"dropbutton-wrapper\">
+      <div class=\"dropbutton-widget\">
+        ";
+            // line 16
+            echo $this->env->getExtension('Twig_Extension_Sandbox')->ensureToStringAllowed($this->env->getExtension('Drupal\Core\Template\TwigExtension')->escapeFilter($this->env, ($context["children"] ?? null), "html", null, true));
+            echo "
+      </div>
+    </div>
   ";
-        // line 14
-        echo $this->env->getExtension('Twig_Extension_Sandbox')->ensureToStringAllowed($this->env->getExtension('Drupal\Core\Template\TwigExtension')->renderVar(t("Subscribe to @title", array("@title" => ($context["title"] ?? null)))));
-        echo "
-</a>
-";
+            echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
+        }
     }
 
     public function getTemplateName()
     {
-        return "core/themes/stable/templates/misc/feed-icon.html.twig";
+        return "core/themes/classy/templates/form/dropbutton-wrapper.html.twig";
     }
 
     public function isTraitable()
@@ -65,7 +70,7 @@ class __TwigTemplate_f382d838aa0945099efb3470ad152d24f878eb546a99fd6e91ce4fed857
 
     public function getDebugInfo()
     {
-        return array (  50 => 14,  43 => 13,);
+        return array (  52 => 16,  48 => 14,  45 => 13,  43 => 12,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -78,6 +83,6 @@ class __TwigTemplate_f382d838aa0945099efb3470ad152d24f878eb546a99fd6e91ce4fed857
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "core/themes/stable/templates/misc/feed-icon.html.twig", "/var/www/html/drupal-8.4.2/core/themes/stable/templates/misc/feed-icon.html.twig");
+        return new Twig_Source("", "core/themes/classy/templates/form/dropbutton-wrapper.html.twig", "/var/www/html/drupal-8.4.2/core/themes/classy/templates/form/dropbutton-wrapper.html.twig");
     }
 }
