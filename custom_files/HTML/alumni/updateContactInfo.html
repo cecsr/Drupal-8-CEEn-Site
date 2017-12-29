@@ -1,30 +1,79 @@
-<div class="civil-page ">
+<div class="civil-page">
     <div class="row text-center">
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-            <h1>Program Information</h1>
+            <h1>Update Contact Information</h1>
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-            <p>There are 17 full-time faculty in the Civil and Environmental Engineering Department. They have a broad spectrum of experience in industry and government, and most are professionally registered. The department has developed a strong research base that is currently funded at about $1 million per year.</p>
-            <p>Areas of instruction include engineering mechanics, hydraulics, environmental engineering, soil mechanics, structures, aircraft structures, structural composites, transportation, and water resources. Most department research is associated with one or more of these areas plus applications for engineering computer modeling.</p>
-            <p>Department research varies with many projects related to water resources--quality, remote sensing, distribution systems, and as part of environmental hazardous waste studies. In the geotechnical area, the department has several active research grants for exploring soil mechanics, earthquake liquefaction, and geologic modeling. Faculty expertise encompasses structures (including aircraft structures), structural mechanics (including advanced composite materials), applications of computer graphics to structural analysis, and improvement of optimization techniques. In recent years there has been a significant increase in the amount of transportation engineering research in the department, much of which is associated with the Utah Department of Transportation.</p>
+            <div class="well text-center">
+                You will be notified of changes upon completation of this form.
+            </div>
+
+            <form class="form-horizontal" id="alumniForm">
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="email">First Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fName" placeholder="Enter first name" name="fName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="mName">Middle Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="mName" placeholder="Enter middle name" name="mName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="lName" required>Last Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="lName" placeholder="Enter last name" name="lName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="address">Street Address:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="address" placeholder="Enter street address" name="address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="city">City:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="city" placeholder="Enter city" name="city">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="state">State:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="state" placeholder="Enter state" name="state">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="zip">Zip:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="zip" placeholder="Enter zip" name="zip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="email" required>Email:</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="phone">Phone:</label>
+                    <div class="col-sm-9">
+                        <input type="phone" class="form-control" id="phone" placeholder="Enter phone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-10 col-sm-2">
+                        <button type="button" onclick="getContactInfo()" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
-
-    <div class="row text-center">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
-            <h1>Other Links</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-            <h4><a href="http://catalog.byu.edu/">Undergraduate Catalog</a></h4>
-            <h4><a href="http://catalog.byu.edu/">Civil and Enviromental Course Scheduling Aid</a></h4>
-
-        </div>
-    </div>
-
-
 </div>
