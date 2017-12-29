@@ -59,13 +59,14 @@ function cleanInput() {
 
 function sendEmail(data) {
     console.log('sending email');
+    //SEND TO GOOGLE SCRIPT TO SEND EMAIL
     $.ajax({
         type: 'POST',
         dataType: 'json',
         url: 'https://script.google.com/macros/s/AKfycbzO4W4Y-_qKVJ49w7bzUyjJAkj_e-moy18FYd2affYFqbNf-r-K/exec',
         data: data,
         success: function (data) {
-            console.log(data);
+            alert("An email has been sent to " + data);
         },
     });
 }
