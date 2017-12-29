@@ -18,10 +18,11 @@ function writeToDatabase() {
 }
 
 function removeFromDatabase(that) {
-    console.log(that);
-    var id = $(that).closest('tr').prop("id");
-    console.log(id);
+    var css_id = $(that).closest('div').prop("id");
+    var id = css_id.substring(5);
     $("#" + id).fadeOut();
+    $("#panel" + id).fadeOut();
+
     firebase.database().ref(id).remove();
 }
 
@@ -36,28 +37,25 @@ var addedToPage = [];
 var functionHasRun = false;
 
 function addDeletebutton(data) {
-    if (functionHasRun == false) {
-        $("colgroup").append("<col style='width: 10%'>");
-        $("#scholarshipHeader").append("<th>Delete</th>");
-        functionHasRun = true;
-    }
-
     $.each(data, function (index, params) {
         var link = params.link;
-        var scholarship = params.scholarship;
         var description = params.description;
         var id = params.id;
+        var employer = params.employer;
+        var description = params.description;
+        var position = params.position;
+        var type = params.type;
 
         var indexNum = addedToPage.indexOf(id);
 
         if (indexNum == -1) {
             addedToPage.push(id);
-            $("#" + id).append("<td><button type='button' class='btn btn-danger'>X</button></td>")
+            $("#panel" + id).append("<button style='float: right;margin:-40px 8px 0px 0px;'type='button' class='btn btn-danger'>Delete</button>")
         }
     });
 }
 
 $('body').on('click', '.btn-danger', function () {
-    alert('Scholarship Deleted');
+    alert('Employment Deleted');
     removeFromDatabase($(this));
 });

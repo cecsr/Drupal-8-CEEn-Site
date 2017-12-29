@@ -16,24 +16,28 @@ var thoseEmployment = firebase.database().ref('/');
 
 thoseEmployment.on('value', function (snapshot) {
     data = snapshot.val();
-    console.log(data);
     displayToPage(data);
     addDeletebutton(data);
 });
 
 function displayToPage(data) {
     $.each(data, function (index, params) {
-        var link = params.link;
+        var link = params.link || "#";
         var employer = params.employer;
         var description = params.description;
         var position = params.position;
         var id = params.id;
-        var type = params.typee;
+        var type = params.type;
+        var button = "";
+        if (link.length > 3) {
+            button = "<a style='margin: 15px' href='" + link + "' type='button' class='btn btn-default'>More Info</a>";
+        }
 
         if ($("#" + id).length == 0) {
-            if (type != "internship") {
-
-                //$("#employment").append("<tr id='" + id + "'><td><a href='#'>" + employment + "</a></td><td>" + description + "</td></tr>");
+            if (type != "Internship") {
+                $("#employment").append("<div class='panel panel-default'><div id='panel" + id + "' class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#" + id + "'>" + position + " (" + type + ") " + " - " + employer + "</a></h4></div><div id='" + id + "' class='panel-collapse collapse'><div class='panel-body'>" + description + "</div>" + button + "</div>")
+            } else {
+                $("#internships").append("<div class='panel panel-default'><div id='panel" + id + "' class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#" + id + "'>" + position + " - " + employer + "</a></h4></div><div id='" + id + "' class='panel-collapse collapse'><div class='panel-body'>" + description + "</div>" + button + "</div>")
             }
         }
     });
