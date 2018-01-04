@@ -10,6 +10,9 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
+alert('Please enter in your new contact information');
+
+
 function getContactInfo() {
     var fName = $('#fName').val();
     var mName = $('#mName').val();
@@ -66,7 +69,7 @@ function sendEmail(data) {
         url: 'https://script.google.com/macros/s/AKfycbzO4W4Y-_qKVJ49w7bzUyjJAkj_e-moy18FYd2affYFqbNf-r-K/exec',
         data: data,
         success: function (data) {
-            alert("An email has been sent to " + data);
-        },
+            alert("An email has been sent to " + data.data);
+        }
     });
 }
