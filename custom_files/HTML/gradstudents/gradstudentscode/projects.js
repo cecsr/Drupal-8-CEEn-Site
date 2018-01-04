@@ -19,7 +19,9 @@ var data = {};
 var thoseProjects = firebase.database().ref('/');
 
 thoseProjects.on('value', function (snapshot) {
+
     data = snapshot.val();
+    console.log(data)
     localStorage.setItem("projectsData", JSON.stringify(data));
     displayToPage(data);
     addDeletebutton(data);
@@ -36,7 +38,7 @@ function displayToPage(data) {
         var projectNum = params.projectNum;
         var studauth = params.studauth;
 
-        if (projectNum <= 25) {
+        if (projectNum >= 25) {
             projectNum = projectNum + 1;
             if ($("#" + projectNum).length == 0) {
                 $("#projects").append("<tr id='" + projectNum + "'><td>" + year + "</td><td>" + studauth + "</td><td>" + advisor + "</td><td>" + emphasis + "</td><td><a href='" + file + "' download>" + title + "</a></td>");
