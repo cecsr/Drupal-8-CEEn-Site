@@ -39,7 +39,6 @@ function displayToPage(data) {
         var studauth = params.studauth;
 
         if (projectNum >= 25) {
-            projectNum = projectNum + 1;
             if ($("#" + projectNum).length == 0) {
                 $("#projects").append("<tr id='" + projectNum + "'><td>" + year + "</td><td>" + studauth + "</td><td>" + advisor + "</td><td>" + emphasis + "</td><td><a href='" + file + "' download>" + title + "</a></td>");
             }

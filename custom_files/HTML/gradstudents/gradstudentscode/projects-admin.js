@@ -75,12 +75,13 @@ function addDeletebutton(data) {
     }
 
     $.each(data, function (index, params) {
+
         var projectNum = params.projectNum;
         var indexNum = addedToPage.indexOf(projectNum);
-
         if (indexNum == -1) {
             addedToPage.push(projectNum);
-            $("#" + projectNum).append("<td><button style='float: right;margin:7px 5px 7px 0px;'type='button' class='btn btn-danger'>Delete</button></td>")
+            console.log(projectNum)
+            $("#" + projectNum).append("<td><button style='float: right;margin:7px 5px 7px 0px;width:100%;min-width:75px'type='button' class='btn btn-danger'>Delete</button></td>")
         }
     });
 }
