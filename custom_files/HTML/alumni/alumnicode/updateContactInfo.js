@@ -10,9 +10,6 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-alert('Please enter in your new contact information');
-
-
 function getContactInfo() {
     var fName = $('#fName').val();
     var mName = $('#mName').val();
@@ -62,7 +59,7 @@ function cleanInput() {
 
 function sendEmail(data) {
     console.log('sending email');
-    //SEND TO GOOGLE SCRIPT TO SEND EMAIL
+    //SEND TO GOOGLE SCRIPT (found in the google drive) TO SEND EMAIL
     $.ajax({
         type: 'POST',
         dataType: 'json',
@@ -72,4 +69,33 @@ function sendEmail(data) {
             alert("An email has been sent to " + data.data);
         }
     });
+}
+
+
+//drupal sucks... you have to do this to ensure that the resources are loaded before you can change stuff
+updateWarning();
+
+setTimeout(function () {
+    updateWarning()
+}, 350);
+
+setTimeout(function () {
+    updateWarning()
+}, 550);
+
+setTimeout(function () {
+    updateWarning()
+}, 1500);
+
+setTimeout(function () {
+    updateWarning()
+}, 3000);
+
+function updateWarning() {
+    console.log('resource')
+    $("#alert").hide();
+    $("#alert").removeClass("alert alert-danger");
+    $("#alert").addClass("well");
+    $("#alert").text("You will be notified of changes upon completion of this form");
+    $("#alert").show();
 }
