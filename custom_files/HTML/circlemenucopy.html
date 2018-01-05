@@ -1,7 +1,7 @@
 <div class='feature-page-odd text-center'>
     <div class='container'>
-        <div id="duhfuh1">
-            <div class="col-lg-2 col-lg-offset-1 col-md-4  col-sm-6">
+        <div class='row'>
+            <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12">
                 <div class='circle-element'>
                     <a href='studentsocieties'>
                         <div class='circle-image'><img src='custom_files/stock_images/stock1.jpg' alt='Faculty'></div>
@@ -10,7 +10,16 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
+                <div class='circle-element'>
+                    <a href='students'>
+                        <div class='circle-image'><img src='custom_files/stock_images/stock3.jpg' alt='Prospective Students'></div>
+                        <div class='circle-title'>Students</div>
+                        <div class='circle-text'></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
                 <div class='circle-element'>
                     <a href='gradstudents'>
                         <div class='circle-image'><img src='custom_files/stock_images/stock15.jpg' alt='Internships/Jobs'></div>
@@ -19,7 +28,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-12">
+            <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 ">
                 <div class='circle-element'>
                     <a href='civiltalk'>
                         <div class='circle-image'><img src='custom_files/stock_images/stock7.jpg' alt='Major Requirements'></div>
@@ -28,9 +37,7 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div id="duhfuh2">
-            <div class="col-lg-2 col-lg-offset-0 col-md-4 col-md-offset-2 col-sm-6">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
                 <div class='circle-element'>
                     <a href='http://byuceenalumni.blogspot.com/'>
                         <div class='circle-image'><img src='custom_files/stock_images/stock9.jpg' alt='Grad FAQ'></div>
@@ -39,7 +46,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 ">
                 <div class='circle-element'>
                     <a href='http://cecapstone.groups.et.byu.net/content/home'>
                         <div class='circle-image'><img src='custom_files/stock_images/stock10.jpg' alt='Grad FAQ'></div>
@@ -53,6 +60,24 @@
 </div>
 
 <style>
+    @media (min-width: 992px) {
+        .col-md-offset-2 {
+            margin-left: 13.66666667%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .col-lg-offset-0 {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 1389px) {
+        .col-lg-2 {
+            padding-left: 15px;
+        }
+    }
+
     .circle-image {
         transition: box-shadow 0.12s ease-in-out;
     }
