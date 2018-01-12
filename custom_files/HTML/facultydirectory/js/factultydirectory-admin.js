@@ -81,12 +81,34 @@ function writeToDatabase() {
                 })
             })
         }
+
+        cleanInput(fName, lName);
     } else {
         alert('No image!');
         return
     }
 }
 
+function cleanInput(fName, lName) {
+    $('#fName').val("");
+    $('#lName').val("");
+    $('#type').val("");
+    $('#position').val("");
+    $('#specialy').val("");
+    $('#lName').val("");
+    $('#biography').val("");
+    $('#office').val("");
+    $('#phone').val("");
+    $('#email').val("");
+    $('#classWebsite').val("");
+    $('#personalWebsite').val("");
+    $('#vitae').val("");
+    $('#image').val("");
+    $('#profileLink').val("");
+    $('#condensedVitae').val("");
+
+    alert("Added " + fName + " " + lName);
+}
 
 $('body').on('click', '.btn-danger', function () {
     removeFromDatabase($(this));

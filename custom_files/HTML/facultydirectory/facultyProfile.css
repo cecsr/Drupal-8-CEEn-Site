@@ -50,12 +50,25 @@
 }
 
 
-
 .facultyrNb {}
 
 .facultyrNb h3 {
     font-size: 1.17em;
     margin-bottom: 0px;
+}
+
+
+
+@media only screen and (min-width: 1640px) {
+    .facultyWrapper {
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .facultyWrapper {
+        margin-left: 15%;
+    }
 }
 
 @media only screen and (max-width: 1040px) {
