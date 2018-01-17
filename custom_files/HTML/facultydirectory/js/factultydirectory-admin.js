@@ -113,3 +113,6 @@ function cleanInput(fName, lName) {
 $('body').on('click', '.btn-danger', function () {
     removeFromDatabase($(this));
 });
+
+
+//https://stackoverflow.com/questions/16270761/how-to-insert-a-large-block-of-html-in-javascript
