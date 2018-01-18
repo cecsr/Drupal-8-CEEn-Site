@@ -4,7 +4,7 @@ function writeToDatabase() {
     var type = $('#type').val();
     var position = $('#position').val();
     var scholarShipsociety = $('#scholarShipsociety').val();
-    var specialy = $('#specialy').val();
+    var specialy = $('#specialty').val();
     var biography = $('#biography').val();
     var office = $('#office').val();
     var phone = $('#phone').val();
@@ -43,7 +43,7 @@ function writeToDatabase() {
                         type: type,
                         position: position,
                         scholarShipsociety: scholarShipsociety,
-                        specialy: specialy,
+                        specialty: specialty,
                         biography: biography,
                         office: office,
                         phone: phone,
@@ -67,7 +67,7 @@ function writeToDatabase() {
                     type: type,
                     position: position,
                     scholarShipsociety: scholarShipsociety,
-                    specialy: specialy,
+                    specialty: specialty,
                     office: office,
                     phone: phone,
                     email: email,
@@ -94,7 +94,7 @@ function cleanInput(fName, lName) {
     $('#lName').val("");
     $('#type').val("");
     $('#position').val("");
-    $('#specialy').val("");
+    $('#specialty').val("");
     $('#lName').val("");
     $('#biography').val("");
     $('#office').val("");
@@ -111,8 +111,5 @@ function cleanInput(fName, lName) {
 }
 
 $('body').on('click', '.btn-danger', function () {
-    removeFromDatabase($(this));
+    //removeFromDatabase($(this));
 });
-
-
-//https://stackoverflow.com/questions/16270761/how-to-insert-a-large-block-of-html-in-javascript

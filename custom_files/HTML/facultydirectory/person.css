@@ -1,0 +1,120 @@
+    .header-container {
+        padding: 12px;
+        text-shadow: 3px 1px 7px rgb(7, 7, 7);
+
+    }
+
+    .background-image {
+        background-image: url("images/profile_background.jpg");
+        background-position: 50%;
+        background-size: cover;
+        height: 300px;
+        width: 100%;
+    }
+
+    .faculty-image {
+        height: 250px;
+        margin: 8px 0 0;
+        width: auto;
+    }
+
+    .left-column {
+        float: left;
+        position: relative;
+        min-height: 1px;
+        margin-left: 33%;
+    }
+
+    .right-column {
+        vertical-align: middle;
+        padding: 30px 16px 16px 0px;
+        color: white;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        margin-left: 15px;
+    }
+
+    .right-column h2 {
+        margin: 0px;
+        color: white;
+        text-shadow: 3px 1px 7px rgb(7, 7, 7);
+
+    }
+
+    .title {
+        margin-bottom: 30px;
+        margin-top: -7px;
+    }
+
+    .contactInfo span {
+        margin-left: 3px;
+    }
+
+    i {
+        margin-right: 5px
+    }
+
+    .panels {
+        background: #f2f2f2;
+        min-height: 600px;
+    }
+
+    .panel-heading .accordion-toggle:after {
+        /* symbol for "opening" panels */
+        font-family: 'Glyphicons Halflings';
+        /* essential for enabling glyphicon */
+        content: "\e114";
+        /* adjust as needed, taken from bootstrap.css */
+        float: right;
+        /* adjust as needed */
+        color: grey;
+        /* adjust as needed */
+    }
+
+    .panel-default {
+        -moz-box-shadow: 8px 8px 16px 1px rgba(0, 0, 0, .2);
+        -webkit-box-shadow: 8px 8px 16px 1px rgba(0, 0, 0, .2);
+        box-shadow: 8px 8px 16px 1px rgba(0, 0, 0, .2);
+    }
+
+    .panel-group .panel + .panel {
+        margin-top: 12px;
+    }
+
+    .panel-heading .accordion-toggle.collapsed:after {
+        /* symbol for "collapsed" panels */
+        content: "\e080";
+        /* adjust as needed, taken from bootstrap.css */
+    }
+
+    .panel-default > .panel-heading {
+        color: #333;
+        background-color: #fffefe;
+        border-color: #fffefe;
+    }
+
+    .panel-group .panel-heading + .panel-collapse > .list-group,
+    .panel-group .panel-heading + .panel-collapse > .panel-body {
+        border-top: 1px solid #faf5f5;
+    }
+
+
+
+    @media only screen and (max-width: 855px) {
+        .left-column {
+            margin-left: 20%
+        }
+    }
+
+    @media only screen and (max-width: 527px) {
+        .background-image {
+            height: 500px;
+        }
+        .left-column {
+            margin-left: 30%
+        }
+        .right-column {
+            margin-left: 30%
+        }
+    }
