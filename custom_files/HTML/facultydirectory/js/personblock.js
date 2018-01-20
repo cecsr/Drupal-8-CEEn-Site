@@ -30,11 +30,12 @@ function getName() {
 }
 
 function searchArray(urlName, data) {
-    console.log(urlName);
     var foundPerson = false;
-
     $.each(data, function (index, params) {
+
         var builtName = params.fName + params.lName;
+        console.log(builtName)
+
         if (urlName == builtName) {
             foundPerson = params;
             document.title = params.fName + " " + params.lName;
@@ -59,7 +60,6 @@ function redirect() {
 }
 
 function displayHeader(personData) {
-    console.log(personData);
     var name = personData.fName + " " + personData.lName;
     var position = personData.position;
     var office = personData.office;
@@ -116,6 +116,8 @@ function displayInfo(personData) {
                 break;
             case 'type':
                 break;
+            case 'pageLink':
+                break;
             case 'personalWebsite':
                 if (params !== "") {
                     links += "<h4><a href='" + params + "'>" + 'Personal Website' + "</a></h4>"
@@ -134,7 +136,6 @@ function displayInfo(personData) {
                 }
                 break;
             case 'specialty':
-                alert('specialty')
                 if (params !== "") {
                     var thePanel = '<div class="panel panel-default">';
                     var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + 'specialty' + '">' + 'Specialty' + '</a></h4></div>';
@@ -143,10 +144,12 @@ function displayInfo(personData) {
                 }
                 break;
             default:
-                if ($("#" + index).length == 0) {
+                if (($("#" + index).length == 0) && (params.content !== "")) {
+                    console.log(params)
+
                     var thePanel = '<div class="panel panel-default">';
-                    var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + index + '">' + index + '</a></h4></div>';
-                    var panelCollapse = '<div id="' + index + '" class="panel-collapse collapse"><div class="panel-body">' + params + '</div></div><div>';
+                    var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + index + '">' + params.title + '</a></h4></div>';
+                    var panelCollapse = '<div id="' + index + '" class="panel-collapse collapse"><div class="panel-body">' + params.content + '</div></div><div>';
 
                     $('#accordion').append(thePanel + panelHeading + panelCollapse);
                 }

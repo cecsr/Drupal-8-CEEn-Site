@@ -42,19 +42,18 @@ function displayFullTime(params) {
     var fName = params.fName;
     var lName = params.lName;
     var fullName = fName + " " + lName;
-    var type = params.type;
     var id = params.id;
-    var biography = params.biography;
+    var biography = params.biography.substring(0, 315) + "...";
     var office = params.office;
     var phone = params.phone;
     var email = params.email;
     var position = params.position;
-    var specialy = params.specialy;
+    var specialty = params.specialty;
     var imagePath = params.imagePath;
-    var linkToFullPage = "person/" + params.id;
+    var linkToFullPage = "person/" + params.pageLink;
 
     if ($("#" + id).length == 0) {
-        $("#fullTime").append("<div class=' facultyWrapper' id='" + id + "'><div class='col-sm-3 facultyImage'><a class='profile-link' href='" + linkToFullPage + "'><img src='" + imagePath + "'></a></div><div class='col-sm-3 facultyInfo'><a href='" + linkToFullPage + "'><h2>" + fullName + "</h2></a><i>" + position + "</i><div class='contactWrapper'><p><strong>Office: </strong>" + office + "</p><p><strong>Phone: </strong> " + phone + "</p><p><strong>Email: </strong>" + email + "</p></div></div><div class='col-sm-6 facultyrNb'><h3 style='margin-top: 5px;'>Research</h3><p>" + specialy + "</p><h3> Biography </h3> <p>" + biography + "</p> </div></div>")
+        $("#fullTime").append("<div class=' facultyWrapper' id='" + id + "'><div class='col-sm-3 facultyImage'><a class='profile-link' href='" + linkToFullPage + "'><img src='" + imagePath + "'></a></div><div class='col-sm-3 facultyInfo'><a href='" + linkToFullPage + "'><h2>" + fullName + "</h2></a><i>" + position + "</i><div class='contactWrapper'><p><strong>Office: </strong>" + office + "</p><p><strong>Phone: </strong> " + phone + "</p><p><strong>Email: </strong>" + email + "</p></div></div><div class='col-sm-6 facultyrNb'><h3 style='margin-top: 5px;'>Research</h3><p>" + specialty + "</p><h3> Biography </h3> <p>" + biography + "</p> </div></div>")
     }
 }
 
@@ -62,25 +61,18 @@ function displayAdjunct(params) {
     var fName = params.fName;
     var lName = params.lName;
     var fullName = fName + " " + lName;
-    var type = params.type;
     var id = params.id;
-    var scholarShipsociety = params.scholarShipsociety;
-    var biography = params.biography;
+    var biography = params.biography.substring(0, 315) + "...";
     var office = params.office;
     var phone = params.phone;
     var email = params.email;
     var position = params.position;
-    var specialy = params.specialy;
-    var personalWebsite = params.personalWebsite;
-    var profileLink = params.profileLink;
-    var filePath = params.filePath;
-    var condensedVitae = params.condensedVitae;
-    var classWebsite = params.classWebsite;
+    var specialty = params.specialty;
     var imagePath = params.imagePath;
-    var linkToFullPage = "person/" + params.id;
+    var linkToFullPage = "person/" + params.pageLink;
 
     if ($("#" + id).length == 0) {
-        $("#adjunct").append("<div class=' facultyWrapper' id='" + id + "'><div class='col-sm-3 facultyImage'><a class='profile-link' href='" + linkToFullPage + "'><img src='" + imagePath + "'></a></div><div class='col-sm-3 facultyInfo'><a href='" + linkToFullPage + "'><h2>" + fullName + "</h2></a><i>" + position + "</i><div class='contactWrapper'><p><strong>Office: </strong>" + office + "</p><p><strong>Phone: </strong> " + phone + "</p><p><strong>Email: </strong>" + email + "</p></div></div><div class='col-sm-6 facultyrNb'><h3 style='margin-top: 5px;'>Research</h3><p>" + specialy + "</p><h3> Biography </h3> <p>" + biography + "</p> </div></div>")
+        $("#adjunct").append("<div class=' facultyWrapper' id='" + id + "'><div class='col-sm-3 facultyImage'><a class='profile-link' href='" + linkToFullPage + "'><img src='" + imagePath + "'></a></div><div class='col-sm-3 facultyInfo'><a href='" + linkToFullPage + "'><h2>" + fullName + "</h2></a><i>" + position + "</i><div class='contactWrapper'><p><strong>Office: </strong>" + office + "</p><p><strong>Phone: </strong> " + phone + "</p><p><strong>Email: </strong>" + email + "</p></div></div><div class='col-sm-6 facultyrNb'><h3 style='margin-top: 5px;'>Research</h3><p>" + specialty + "</p><h3> Biography </h3> <p>" + biography + "</p> </div></div>")
     }
 }
 
