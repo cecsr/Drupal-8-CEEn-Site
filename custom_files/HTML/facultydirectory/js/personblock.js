@@ -32,9 +32,7 @@ function getName() {
 function searchArray(urlName, data) {
     var foundPerson = false;
     $.each(data, function (index, params) {
-
         var builtName = params.fName + params.lName;
-        console.log(builtName)
 
         if (urlName == builtName) {
             foundPerson = params;
@@ -67,18 +65,18 @@ function displayHeader(personData) {
     var email = personData.email;
     var imagePath = personData.imagePath;
     var personalWebsite = personData.personalWebsite;
-    var specialy = personData.specialy;
+    var specialty = personData.specialty;
     var classWebsite = personData.classWebsite;
 
     $("#imagePath").hide(function () {
         $("#imagePath").attr('src', imagePath);
         $("#imagePath").fadeIn();
     });
-    $('#name').text(name);
-    $('#position').text(position);
-    $('#office').text(office);
-    $('#phone').text(phone);
-    $('#email').text(email);
+    $('#nameHeader').text(name);
+    $('#positionHeader').text(position);
+    $('#officeHeader').text(office);
+    $('#phoneHeader').text(phone);
+    $('#emailHeader').text(email);
 
     setTimeout(function () {
         $('.header-container').fadeIn();
@@ -92,8 +90,8 @@ function displayInfo(personData) {
 
     //BIOGRAPHY FIRST
     var thePanel = '<div class="panel panel-default">';
-    var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#biography">' + 'Biography' + '</a></h4></div>';
-    var panelCollapse = '<div id="biography" class="panel-collapse collapse in"><div class="panel-body">' + biography + '</div></div><div>';
+    var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#biographyPanel">' + 'Biography' + '</a></h4></div>';
+    var panelCollapse = '<div id="biographyPanel" class="panel-collapse collapse in"><div class="panel-body">' + biography + '</div></div><div>';
     $('#accordion').append(thePanel + panelHeading + panelCollapse);
 
     $.each(personData, function (index, params) {
@@ -138,15 +136,13 @@ function displayInfo(personData) {
             case 'specialty':
                 if (params !== "") {
                     var thePanel = '<div class="panel panel-default">';
-                    var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + 'specialty' + '">' + 'Specialty' + '</a></h4></div>';
-                    var panelCollapse = '<div id="' + 'specialty' + '" class="panel-collapse collapse"><div class="panel-body">' + params + '</div></div><div>';
+                    var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + 'specialtyPanel' + '">' + 'Specialty' + '</a></h4></div>';
+                    var panelCollapse = '<div id="' + 'specialtyPanel' + '" class="panel-collapse collapse"><div class="panel-body">' + params + '</div></div><div>';
                     $('#accordion').append(thePanel + panelHeading + panelCollapse);
                 }
                 break;
             default:
                 if (($("#" + index).length == 0) && (params.content !== "")) {
-                    console.log(params)
-
                     var thePanel = '<div class="panel panel-default">';
                     var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + index + '">' + params.title + '</a></h4></div>';
                     var panelCollapse = '<div id="' + index + '" class="panel-collapse collapse"><div class="panel-body">' + params.content + '</div></div><div>';
