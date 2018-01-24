@@ -100,6 +100,14 @@ function displayInfo(personData) {
                 break;
             case 'fName':
                 break;
+            case 'email':
+                break;
+            case 'biography':
+                break;
+            case 'office':
+                break;
+            case 'phone':
+                break;
             case 'lName':
                 break;
             case 'classWebsite':
@@ -143,6 +151,7 @@ function displayInfo(personData) {
                 break;
             default:
                 if (($("#" + index).length == 0) && (params.content !== "")) {
+                    console.log(params);
                     var thePanel = '<div class="panel panel-default">';
                     var panelHeading = '<div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + index + '">' + params.title + '</a></h4></div>';
                     var panelCollapse = '<div id="' + index + '" class="panel-collapse collapse"><div class="panel-body">' + params.content + '</div></div><div>';
